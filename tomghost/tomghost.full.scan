@@ -1,0 +1,20 @@
+# Nmap 7.92 scan initiated Wed Jul 13 04:35:14 2022 as: nmap -sC -sC -T4 -p- -oN tomghost.full.scan 10.10.245.237
+Warning: 10.10.245.237 giving up on port because retransmission cap hit (6).
+Nmap scan report for 10.10.245.237
+Host is up (0.064s latency).
+Not shown: 65241 closed tcp ports (conn-refused), 290 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+| ssh-hostkey: 
+|   2048 f3:c8:9f:0b:6a:c5:fe:95:54:0b:e9:e3:ba:93:db:7c (RSA)
+|   256 dd:1a:09:f5:99:63:a3:43:0d:2d:90:d8:e3:e1:1f:b9 (ECDSA)
+|_  256 48:d1:30:1b:38:6c:c6:53:ea:30:81:80:5d:0c:f1:05 (ED25519)
+53/tcp   open  domain
+8009/tcp open  ajp13
+| ajp-methods: 
+|_  Supported methods: GET HEAD POST OPTIONS
+8080/tcp open  http-proxy
+|_http-title: Apache Tomcat/9.0.30
+|_http-favicon: Apache Tomcat
+
+# Nmap done at Wed Jul 13 04:47:32 2022 -- 1 IP address (1 host up) scanned in 737.74 seconds

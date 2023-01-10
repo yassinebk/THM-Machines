@@ -1,0 +1,23 @@
+elfi in ?view=dog/..filehere
+
+- we can use filters to read the content of index .php so we know how the files are getting included
+
+- we find that it checks if an ext paramter is passed otherwise it appends .php ( I tried to use %00 to eliminate it but it didn't work. It actually read it in the php but not the command) 
+
+- We use the php://filter/convert.base64-encode/ressources=index.php
+
+- We than read the access.log file
+
+- Now we can inject php code into the access.log then read it to have an RCE
+
+- reverse shell -> env privesc 
+
+- .dockerenv in root
+
+- find / -f ASCII -exec cat {}; | grep container
+
+- find /opt/backups, it actually executes outside the container 
+
+- we modify it to get another reverse shell 
+
+- bingo !

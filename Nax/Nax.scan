@@ -1,0 +1,27 @@
+# Nmap 7.92 scan initiated Wed Jul 13 10:13:22 2022 as: nmap -sC -sC -T4 -oN Nax.scan 10.10.27.93
+Nmap scan report for 10.10.27.93
+Host is up (0.076s latency).
+Not shown: 995 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+22/tcp  open  ssh
+| ssh-hostkey: 
+|   2048 62:1d:d9:88:01:77:0a:52:bb:59:f9:da:c1:a6:e3:cd (RSA)
+|_  256 af:67:7d:24:e5:95:f4:44:72:d1:0c:39:8d:cc:21:15 (ECDSA)
+25/tcp  open  smtp
+|_smtp-commands: ubuntu.localdomain, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN
+| ssl-cert: Subject: commonName=ubuntu
+| Not valid before: 2020-03-23T23:42:04
+|_Not valid after:  2030-03-21T23:42:04
+80/tcp  open  http
+|_http-title: Site doesn't have a title (text/html).
+389/tcp open  ldap
+443/tcp open  https
+| tls-alpn: 
+|_  http/1.1
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=192.168.85.153/organizationName=Nagios Enterprises/stateOrProvinceName=Minnesota/countryName=US
+| Not valid before: 2020-03-24T00:14:58
+|_Not valid after:  2030-03-22T00:14:58
+|_http-title: 400 Bad Request
+
+# Nmap done at Wed Jul 13 10:14:03 2022 -- 1 IP address (1 host up) scanned in 41.60 seconds

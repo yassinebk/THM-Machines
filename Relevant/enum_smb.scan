@@ -1,0 +1,1 @@
+# Nmap 7.92 scan initiated Sat Jul  2 20:29:14 2022 as: nmap -T4 -F --script=smb-vuln* -oN enum_smb.scan 10.10.63.44

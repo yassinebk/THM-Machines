@@ -1,0 +1,47 @@
+# Nmap 7.92 scan initiated Sat Jul  2 20:04:16 2022 as: nmap -sC -T4 -oN nmap.scan 10.10.63.44
+Nmap scan report for 10.10.63.44
+Host is up (0.13s latency).
+Not shown: 995 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows Server
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+3389/tcp open  ms-wbt-server
+| rdp-ntlm-info: 
+|   Target_Name: RELEVANT
+|   NetBIOS_Domain_Name: RELEVANT
+|   NetBIOS_Computer_Name: RELEVANT
+|   DNS_Domain_Name: Relevant
+|   DNS_Computer_Name: Relevant
+|   Product_Version: 10.0.14393
+|_  System_Time: 2022-07-03T01:04:28+00:00
+| ssl-cert: Subject: commonName=Relevant
+| Not valid before: 2022-07-02T01:02:47
+|_Not valid after:  2023-01-01T01:02:47
+|_ssl-date: 2022-07-03T01:04:28+00:00; 0s from scanner time.
+
+Host script results:
+| smb2-time: 
+|   date: 2022-07-03T01:04:28
+|_  start_date: 2022-07-03T01:03:03
+|_clock-skew: mean: 1h24m00s, deviation: 3h07m51s, median: 0s
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard Evaluation 14393 (Windows Server 2016 Standard Evaluation 6.3)
+|   Computer name: Relevant
+|   NetBIOS computer name: RELEVANT\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2022-07-02T18:04:30-07:00
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+
+# Nmap done at Sat Jul  2 20:05:06 2022 -- 1 IP address (1 host up) scanned in 50.38 seconds

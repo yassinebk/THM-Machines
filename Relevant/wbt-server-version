@@ -1,0 +1,1 @@
+# Nmap 7.92 scan initiated Sat Jul  2 20:14:41 2022 as: nmap -T4 -sV -p 80 -oN wbt-server-version 10.10.63.44

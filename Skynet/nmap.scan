@@ -1,0 +1,42 @@
+# Nmap 7.92 scan initiated Sat Jul  2 02:21:12 2022 as: nmap -sC -T4 -oN nmap.scan 10.10.46.187
+Nmap scan report for 10.10.46.187
+Host is up (0.10s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT    STATE SERVICE
+22/tcp  open  ssh
+| ssh-hostkey: 
+|   2048 99:23:31:bb:b1:e9:43:b7:56:94:4c:b9:e8:21:46:c5 (RSA)
+|   256 57:c0:75:02:71:2d:19:31:83:db:e4:fe:67:96:68:cf (ECDSA)
+|_  256 46:fa:4e:fc:10:a5:4f:57:57:d0:6d:54:f6:c3:4d:fe (ED25519)
+80/tcp  open  http
+|_http-title: Skynet
+110/tcp open  pop3
+|_pop3-capabilities: RESP-CODES AUTH-RESP-CODE SASL TOP PIPELINING CAPA UIDL
+139/tcp open  netbios-ssn
+143/tcp open  imap
+|_imap-capabilities: more ENABLE have post-login SASL-IR IDLE capabilities LOGIN-REFERRALS ID LITERAL+ IMAP4rev1 LOGINDISABLEDA0001 listed OK Pre-login
+445/tcp open  microsoft-ds
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.3.11-Ubuntu)
+|   Computer name: skynet
+|   NetBIOS computer name: SKYNET\x00
+|   Domain name: \x00
+|   FQDN: skynet
+|_  System time: 2022-07-02T02:21:16-05:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-time: 
+|   date: 2022-07-02T07:21:16
+|_  start_date: N/A
+|_nbstat: NetBIOS name: SKYNET, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+|_clock-skew: mean: 1h39m59s, deviation: 2h53m12s, median: -1s
+
+# Nmap done at Sat Jul  2 02:21:49 2022 -- 1 IP address (1 host up) scanned in 37.52 seconds

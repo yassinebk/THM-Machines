@@ -1,0 +1,9 @@
+1. enumerate, make sure to use rustscan before nmap because the targeted port will be 5601 :) 
+
+2. Read this article https://research.securitum.com/prototype-pollution-rce-kibana-cve-2019-7609/
+
+3. Now perform the exploit , you can also use the github repo there is a script but it didn't work for me 
+
+4. getcap -r to get capabilites of files that can execute things as root (not whole root capabilities but small privliges )
+
+5. use the python3 binary to spawn a shell :) 

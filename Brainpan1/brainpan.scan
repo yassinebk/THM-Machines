@@ -1,0 +1,9 @@
+# Nmap 7.92 scan initiated Wed Jul  6 00:33:07 2022 as: nmap -sC -sC -T4 -oN brainpan.scan 10.10.95.44
+Nmap scan report for 10.10.95.44
+Host is up (0.095s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+9999/tcp  open  abyss
+10000/tcp open  snet-sensor-mgmt
+
+# Nmap done at Wed Jul  6 00:33:14 2022 -- 1 IP address (1 host up) scanned in 7.67 seconds

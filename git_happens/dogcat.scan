@@ -1,0 +1,13 @@
+# Nmap 7.92 scan initiated Wed Jul 13 08:31:14 2022 as: nmap -sC -sC -T4 -oN dogcat.scan 10.10.40.21
+Nmap scan report for 10.10.40.21
+Host is up (0.064s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+80/tcp open  http
+| http-git: 
+|   10.10.40.21:80/.git/
+|     Git repository found!
+|_    Repository description: Unnamed repository; edit this file 'description' to name the...
+|_http-title: Super Awesome Site!
+
+# Nmap done at Wed Jul 13 08:31:40 2022 -- 1 IP address (1 host up) scanned in 25.52 seconds
